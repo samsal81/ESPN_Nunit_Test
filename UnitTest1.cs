@@ -4,7 +4,7 @@ using OpenQA.Selenium.Chrome;
 using System;
 using System.IO;
 
-namespace nunittemp
+namespace ESPN_Nunit_Test
 {
     public class Tests
     {
