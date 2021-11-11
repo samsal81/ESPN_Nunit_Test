@@ -18,11 +18,15 @@ namespace ESPN_Nunit_Test
             //maximizing the window
             driver.Manage().Window.Maximize();
 
+            //clear cache
+            driver.Manage().Cookies.DeleteAllCookies();
+
             //navidating to page
             driver.Navigate().GoToUrl("http://espn.com");
 
             //setting implicit wait
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+
         }
 
         [Test]
