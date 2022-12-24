@@ -1,34 +1,12 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using System;
 using System.IO;
 
 namespace ESPN_Nunit_Test
 {
-    public class Tests
+    public class Tests : TestBase
     {
-        IWebDriver driver;
-
-        [SetUp]
-        public void Setup()
-        {
-            driver = new ChromeDriver();
-
-            //maximizing the window
-            driver.Manage().Window.Maximize();
-
-            //clear cache
-            driver.Manage().Cookies.DeleteAllCookies();
-
-            //navidating to page
-            driver.Navigate().GoToUrl("http://espn.com");
-
-            //setting implicit wait
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-
-        }
-
         [Test]
         public void Test1()
         {
@@ -56,13 +34,6 @@ namespace ESPN_Nunit_Test
             //closing writer and file
             s.Close();
             f.Close();
-        }
-
-        [TearDown]
-        public void tearDown()
-        {
-            driver.Close();
-            driver.Quit();
         }
     }
 }
